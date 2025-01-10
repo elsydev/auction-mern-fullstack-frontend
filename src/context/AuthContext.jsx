@@ -210,6 +210,8 @@ export const AuthProvider = ({ children }) => {
       console.log(res.data);
       if (res.status === 200) {
         setIsTokenSent(true);
+        toast.success(res.data.message);
+        navigate("/")
       }
     } catch (error) {
       console.log(error);
@@ -250,6 +252,8 @@ export const AuthProvider = ({ children }) => {
       setToUpdatePassword("");
       setPasswordChanged(true);
       setIsTokenSent(false);
+      toast.success(res.data.message);
+      
     } catch (error) {
       console.log(error);
       if (Array.isArray(error.response.data)) {

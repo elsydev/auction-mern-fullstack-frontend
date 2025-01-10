@@ -303,6 +303,13 @@ const checkPassword=()=>{
               {!loading && "Register"}
             </button>
           </form>
+          <div className="flex flex-col sm:flex-row justify-between p-1 gap-5">
+                  
+                  <p className="mt-2">
+                    <Link to="/login" className="text-blue-500">¿Ya tienes cuenta aquí? Inicia Sesión</Link>
+                  </p>
+                </div>
+
         </div>
       </section>
     </div>

@@ -36,6 +36,7 @@ import MyAuctionsDetails from "./pages/MyAuctionsDetails.jsx";
 import ViewAuctionDetails from "./pages/ViewAuctionDetails.jsx"
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 import Contact from "./pages/Contact.jsx";
+import NewPassword from "./pages/NewPassword.jsx";
 function App() {
   return (
     <AuthProvider>
@@ -54,6 +55,7 @@ function App() {
                 <Route path="/register" element={<Register />} />
 
                 <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/validate-token" element={<NewPassword />} />
 
                 <Route path="/confirm-account" element={<ConfirmAccount />} />
                 <Route path="/how-it-works-info" element={<HowItWorks />} />

@@ -72,10 +72,17 @@ const Login = () => {
             </div>
                 
                 <button type="submit" className="bg-[#d6482b] font-semibold hover:bg-[#b8381e] transition-all duration-300 text-xl py-2 px-4 rounded-md text-white mx-auto my-4">  {loading ? "Logging In..." : "Login"}</button>
-                <p className="mt-2">
-                    <a href="/forgot-password" className="text-blue-500">¿Olvidaste tu contraseña?</a>
-                </p>
-            </form>
+               
+            </form> 
+            <div className="flex flex-col sm:flex-row justify-between p-1 gap-5">
+                  <p className="mt-2">
+                    <Link to="/forgot-password" className="text-blue-500">¿Olvidaste tu contraseña?</Link>
+                  </p>
+                  <p className="mt-2">
+                    <Link to="/register" className="text-blue-500">¿No tienes cuenta aún? Registrate</Link>
+                  </p>
+                </div>
+
             </div>
             </section>
         </>

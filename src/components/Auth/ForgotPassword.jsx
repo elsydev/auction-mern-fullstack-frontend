@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate, Link } from "react-router-dom";
-
+import { useEffect,useState } from "react";
 const ForgotPassword = () => {
     const {
       isAuthenticated,
@@ -34,10 +34,19 @@ const ForgotPassword = () => {
         reset();
       });
   return (
-    <div className="flex justify-center items-center h-screen">
+    <>
+      <section className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col min-h-screen py-4 justify-center">
+      <div className="bg-white mx-auto w-full h-auto px-2 flex flex-col gap-4 items-center py-4 justify-center rounded-md sm:w-[600px] sm:h-[450px]">
+          <h3
+            className={`text-[#d6482b] text-xl font-bold mb-2 min-[480px]:text-4xl md:text-4xl xl:text-2xl 2xl:text-3xl text-center`}
+          >
+            ¿Olvidaste tu password?
+          </h3>
+          <p className="text-center text-stone-500">Ingresa tu email registrado</p>
+        
 
-<form onSubmit={onSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-xs">
- <h2 className="text-lg mb-4">Solicitar Reset de Password</h2>
+<form onSubmit={onSubmit} className="flex flex-col gap-5 w-full">
+
  <input type="email" placeholder="Email" className="border p-2 mb-4 w-full" name="email"
               {...register("email", {
                 required: {
@@ -53,10 +62,13 @@ const ForgotPassword = () => {
               {errors.email && (
               <p className="text-red-500">{errors.email.message}</p>
             )}
-<button type="submit" className="bg-blue-500 text-white p-2 w-full">Solicitar Reset</button>
+<button type="submit" className="bg-[#d6482b] font-semibold hover:bg-[#b8381e] transition-all duration-300 text-xl py-2 px-4 rounded-md text-white mx-auto my-4">Solicitar Reset</button>
                 
             </form>
     </div>
+      </section>
+    </>
+    
   );
   };
   
