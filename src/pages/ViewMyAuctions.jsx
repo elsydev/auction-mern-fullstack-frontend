@@ -13,8 +13,9 @@ const ViewMyAuctions = () => {
       navigate("/");
     }
     getMyAuctionItems();
-    console.log("Desde view my auctions",myAuctions,loading);
-  }, []);
+    
+  },[])
+  
   return 
   <>
         <div className="w-full ml-0 m-0 h-fit px-5 pt-20 lg:pl-[320px] flex flex-col">
@@ -54,7 +55,7 @@ const ViewMyAuctions = () => {
           </div>
         )}  
       </div>  
-  </>;
+  </>
 };
 
 export default ViewMyAuctions;
