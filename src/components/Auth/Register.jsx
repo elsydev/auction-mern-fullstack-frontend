@@ -88,7 +88,7 @@ const checkPassword=()=>{
   }else {
 
     setPasswordError(false);
-    setConfirmPassword("")
+    //setConfirmPassword("")
   }
 }
 

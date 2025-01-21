@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuction } from "@/context/AuctionContext";
 import { useAuth } from "@/context/AuthContext";
 const CreateAuction = () => {
-    const{loading,createAuction,newAuction}=useAuction();
+    const{loading,createAuction,newAuction,errors}=useAuction();
     const{isAuthenticated,user}=useAuth();
     const [image, setImage] = useState("");
     const [imagePreview, setImagePreview] = useState("");
@@ -58,9 +58,13 @@ const navigateTo = useNavigate();
     formData.append("endTime", endTime);
     console.log(formData)
     createAuction(formData);
+    console.log(errors)
+    if(!errors){
     setTimeout(()=>{
         navigateTo("/auctions")
-    },1000)
+    },500)
+    }
+
   };
   
   return (
