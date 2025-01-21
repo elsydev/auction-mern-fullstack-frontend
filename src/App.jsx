@@ -31,7 +31,7 @@ import About from "./pages/About.jsx";
 import Leaderboard from './pages/Leaderboard.jsx'
 import AuctionItem from "./pages/AuctionItem.jsx";
 import CreateAuction from "./pages/CreateAuction.jsx";
-
+import ViewAuctionDetails from "./pages/ViewAuctionDetails.jsx"
 import MyAuctionsDetails from "./pages/MyAuctionsDetails.jsx";
 
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
