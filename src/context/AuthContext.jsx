@@ -86,7 +86,7 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
         return;
       }
-      console.log("buscando cookies",token);
+      //console.log("buscando cookies",token);
       try {
         const res = await perfilRequest(token);
         if (!res.data) {
@@ -98,7 +98,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(true);
         setUser(res.data);
         setLoading(false);
-        console.log('User desde checkLogin', user)
+        //console.log('User desde checkLogin', user)
       } catch (error) {
         setIsAuthenticated(false);
         setUser(null);
@@ -139,7 +139,7 @@ export const AuthProvider = ({ children }) => {
       headers:{
        "Content-Type": "multipart/form-data"
    }}) */
-      console.log(res.data);
+     / console.log(res.data);
       setUser(res.data);
       //setIsAuthenticated(true)
       setIsRegistered(true);
@@ -157,7 +157,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(true)
     try {
       const res = await loginRequest(values);
-      console.log(res.data);
+     // console.log(res.data);
       setUser(res.data);
       localStorage.setItem('token', res.data.token)
 
@@ -165,7 +165,7 @@ export const AuthProvider = ({ children }) => {
       if (res.data.role === "Admin") {
         setIsAdmin(true);
       }
-      console.log(user);
+      //console.log(user);
 
       setIsAuthenticated(true);
       setIsLogged(true);
@@ -188,10 +188,10 @@ export const AuthProvider = ({ children }) => {
     setIsLogged(false);
   };
   const confirmingAccount = async (values) => {
-    console.log("En confirming Account: ", values);
+   // console.log("En confirming Account: ", values);
     try {
       const res = await confirmRequest(values);
-      console.log(res.data);
+     // console.log(res.data);
       setIsConfirmed(true);
       //setUser(res.data)
       navigate("/login");
@@ -207,7 +207,7 @@ export const AuthProvider = ({ children }) => {
   const requirePasswordChange = async (values) => {
     try {
       const res = await requirePasswordRequest(values);
-      console.log(res.data);
+    //  console.log(res.data);
       if (res.status === 200) {
         setIsTokenSent(true);
         toast.success(res.data.message);
@@ -223,11 +223,11 @@ export const AuthProvider = ({ children }) => {
     }
   };
   const validateTokenPassword = async (values) => {
-    console.log("En validateTokenPassord: ", values);
+   // console.log("En validateTokenPassord: ", values);
     try {
  
       const res = await validatePasswordToken(values);
-      console.log("He validado token de password en frontend", res.data);
+   //   console.log("He validado token de password en frontend", res.data);
       setIsValidToken(true);
       setUser(res.data);
       setToUpdatePassword(res.data.token);
@@ -244,11 +244,11 @@ export const AuthProvider = ({ children }) => {
   };
 
   const updatingPassword = async (newPassword, token) => {
-    console.log("En updating password", newPassword);
-    console.log("En updating password", token);
+  //  console.log("En updating password", newPassword);
+  //  console.log("En updating password", token);
     try {
       const res = await updatePasswordRequest(newPassword, token);
-      console.log(res.data);
+   //   console.log(res.data);
       setToUpdatePassword("");
       setPasswordChanged(true);
       setIsTokenSent(false);
@@ -271,11 +271,11 @@ export const AuthProvider = ({ children }) => {
     console.log(error)
     } */
     const token = localStorage.getItem('token')
-    console.log('desde getProfile en Auth context',token)
+    // console.log('desde getProfile en Auth context',token)
     if(!token) return
     try {
       const res = await getProfileRequest(token);
-      console.log(res.data);
+    //  console.log(res.data);
       setUser(res.data);
     } catch (error) {
       console.log(error);
@@ -289,11 +289,11 @@ export const AuthProvider = ({ children }) => {
   const getLeaderBoard = async () => {
     setLoading(true)
     const token = localStorage.getItem('token')
-    console.log('desde getLeaderBoard en Auth context',token)
+  //  console.log('desde getLeaderBoard en Auth context',token)
     if(!token) return
     try {
       const res = await getLeaderBoardRequest(token);
-      console.log(res.data);
+    //  console.log(res.data);
       setLeaderBoardList(res.data);
       setLoading(false)
     } catch (error) {
