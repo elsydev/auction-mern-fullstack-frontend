@@ -4,6 +4,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { CommissionProvider } from "./context/CommissionContext";
 import { AuctionProvider } from "./context/AuctionContext.jsx";
 import { SuperProvider } from "./context/SuperContext.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 import Footer from "./components/Footer.jsx";
@@ -60,6 +61,7 @@ function App() {
                 <Route path="/confirm-account" element={<ConfirmAccount />} />
                 <Route path="/how-it-works-info" element={<HowItWorks />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/*" element={<PageNotFound />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/auctions" element={<Auctions />} />
